@@ -1,9 +1,9 @@
 const express = require('express');
 const { resolve } = require('path');
 const { getAllGames, getGameById } = require('./controllers');
-
+const cors = require("cors");
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 app.get('/games', async (req, res) => {
